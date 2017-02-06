@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大效果</title>
+</head>
+<style>
+	#thumbnail{
+		width: 200px;
+	}
+	#prototype{
+		width: 400px;
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	function zoom(){
+		var pic = document.getElementById("prototype");
+		pic.style.display = "block";
+	}
+	function narrow(){
+		var pic = document.getElementById("prototype");
+		pic.style.display = "none";
+	}
+</script>
+<body>
+	<div class="thumbnail">
+		<img id="thumbnail" src="codol.jpg" alt="" onmouseover="zoom()" onmouseout="narrow()">
+	</div>
+	<div class="prototype">
+		<img id="prototype" src="codol.jpg" alt="">
+	</div>
+</body>
+</html>
