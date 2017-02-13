@@ -12,7 +12,7 @@ padding: 0;
         #demo {
 display: block;
 width: 400px;
-height: 255px;
+height: 225px;
 margin: 50px;
 position: relative;
 border: 1px solid #ccc;
@@ -88,7 +88,7 @@ objBigBox.style.display = "none";
 
 objSmallBox.onmousemove = function (ev) {
 
-//请补充此处鼠标移动时的响应方法
+//鼠标移动时的响应方法
     var _event = ev || window.event;
     var floatLeft = _event.clientX - objDemo.offsetLeft - objSmallBox.offsetLeft - objFloatBox.offsetWidth/2;
     var floatTop = _event.clientY - objDemo.offsetTop - objSmallBox.offsetTop - objFloatBox.offsetHeight/2;
