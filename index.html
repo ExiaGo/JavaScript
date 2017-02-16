@@ -11,7 +11,7 @@
 	<h1 class="text-center">这是一些自己写的小功能</h1>
 	<div>
 		<h2 class="text-primary">第一个 轮播图--点击实现换图</h2>
-		<p class="text-success">代码如下</p>
+		<p class="text-success" style="text-indent: 2em;">代码如下</p>
             <xmp class="jumbotron">
                 <!DOCTYPE html>
                 <html lang="en">
@@ -76,7 +76,7 @@
 	</div>
 	<div>
 		<h2 class="text-primary">第二个 轮播图--焦点图</h2>
-		<p class="text-success">代码如下</p>
+		<p class="text-success" style="text-indent: 2em;">代码如下</p>
         
         <xmp class="jumbotron">
             <!DOCTYPE html>
@@ -183,7 +183,7 @@
 	</div>
 	<div>
 		<h2 class="text-primary">第三个 弹幕评论效果</h2>
-		<p class="text-success">代码如下</p>
+		<p class="text-success" style="text-indent: 2em;">代码如下</p>
 
         <xmp class="jumbotron">
             <!DOCTYPE html>
@@ -267,7 +267,7 @@
 	</div>
 	<div>
 		<h2 class="text-primary">第四个 放大镜</h2>
-		<p class="text-success">代码如下</p>
+		<p class="text-success" style="text-indent: 2em;">代码如下</p>
 
         <xmp class="jumbotron">
             <!DOCTYPE html>
@@ -408,6 +408,90 @@
 
 		<input type="button" value="运行代码" onclick="javascript:window.open('./放大镜/放大镜.html','_blank')" onmouseover="buttonStyle()" onmouseout="buttonStyle()">
 	</div>
+    <div>
+        <h2 class="text-primary">第五个 公平的骰子</h2>
+        <p class="text-success" style="text-indent: 2em;">代码如下</p>
+        <xmp class="jumbotron">
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <title>骰子</title>
+                <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+                <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <style>
+                    .warp{
+                        width: 200px;
+                        height: 150px;
+                        /*position: relative;*/
+                        margin: 0 auto;
+                    }
+                    .warp img{
+                        position: absolute;
+                        width: 200px;
+                    }
+                    .myButton{
+                        width: 170px;
+                        margin: 20px auto;
+                    }
+                    .myButton button{
+                        margin: 0 auto;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="warp">
+                    <img src="1.png" alt="">
+                    <img src="2.png" alt="">
+                    <img src="3.png" alt="">
+                    <img src="4.png" alt="">
+                    <img src="5.png" alt="">
+                    <img src="6.png" alt="">
+                </div>
+
+                <div class="myButton">
+                    <button type="button" id="button1" class="btn btn-primary btn-lg" onclick="startTimer()">投骰子</button>
+                    <button type="button" id="button2" class="btn btn-primary btn-lg" onclick="stop()">停止</button>
+                </div>
+            </body>
+            <script type="text/javascript">
+                var button1 = document.getElementById("button1");
+                var button2 = document.getElementById("button2");
+                var imgs = document.getElementsByTagName("img");
+                var index = -1000;
+                var pics = [];
+                var count = 0;
+                //先将图片的z-index赋值
+                for (var i = 0; i < imgs.length; i++) {
+                    pics[i] = imgs[i];
+                    var currenPic = pics[i];
+                    currenPic.style.zIndex = -i;
+                }
+                //在这个数组的开头和结尾重复删除和压进图片
+                //同时重置其z-index
+                var start = function(){
+                    var showFirst = pics.shift();
+                    showFirst.style.zIndex = -index + count;
+                    pics.push(showFirst);
+                    count++;
+                }
+
+                var startTimer = function(){
+                    timer = setInterval(start,100);
+                    button1.disabled = true;
+                }
+
+                var stop = function(){
+                    clearInterval(timer);
+                    button1.disabled = false;
+                }
+
+
+            </script>
+            </html>
+        </xmp>
+        <input type="button" value="运行代码" onclick="javascript:window.open('./骰子/骰子.html','_blank')" onmouseover="buttonStyle()" onmouseout="buttonStyle()">
+    </div>
     <br><!-- 这个只是用于隔开，好看一些 -->
     <div class="jumbotron">
         <h3 class="text-center">更新中......</h3>
