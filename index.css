@@ -1,0 +1,29 @@
+#menu{
+        position: fixed;
+        left: 50%;
+        margin-left: 400px;
+        margin-top: 150px;
+    }
+
+#menu ul li a {
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    text-align: center;
+}
+
+#menu ul li a:hover,
+#menu ul li a.current {
+    color: #fff;
+    background: #0088bb;
+}
+
+li{
+    list-style-type: none;
+}
